@@ -151,6 +151,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux安装nodejs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/01/linux%E5%AE%89%E8%A3%85nodejs/">linux安装nodejs</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/01/linux%E5%AE%89%E8%A3%85nodejs/" class="archive-article-date">
+  	<time datetime="2020-05-01T15:11:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>官网复制nodejs的linux版本下载地址到linux上下载安装包<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr    <span class="comment">//进入usr目录</span></span><br><span class="line">wget https:<span class="comment">//npm.taobao.org/mirrors/node/v14.1.0/node-v14.1.0-linux-x64.tar.xz</span></span><br></pre></td></tr></table></figure></li>
+<li>解压压缩包<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvJf node-v14<span class="number">.1</span><span class="number">.0</span>-linux-x64.tar.xz     <span class="comment">//解压node的包</span></span><br></pre></td></tr></table></figure></li>
+<li>重命名<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v14<span class="number">.1</span><span class="number">.0</span>-linux-x64 nodejs</span><br></pre></td></tr></table></figure></li>
+<li>建立软连接，变为全局环境变量<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/nodejs/bin/npm /usr/local/bin/</span><br><span class="line">ln -s /usr/nodejs/bin/node /usr/local/bin/</span><br></pre></td></tr></table></figure></li>
+<li>测试安装是否成功<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/01/linux%E5%AE%89%E8%A3%85nodejs/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数组字符串扩展方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -171,7 +240,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ol>
+<li>format<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">format</span>(<span class="params">str, object</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> array = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> str.replace(<span class="regexp">/\\?\#&#123;([^&#123;&#125;]+)\&#125;/gm</span>, <span class="function"><span class="keyword">function</span>(<span class="params">match, name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (match.charAt(<span class="number">0</span>) == <span class="string">'\\'</span>)</span><br><span class="line">      <span class="keyword">return</span> match.slice(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> index = <span class="built_in">Number</span>(name)</span><br><span class="line">    <span class="keyword">if</span> (index &gt;= <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> array[index];</span><br><span class="line">    <span class="keyword">if</span> (object &amp;&amp; object[name] !== <span class="keyword">void</span> <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span>  object[name];</span><br><span class="line">    <span class="keyword">return</span>  <span class="string">''</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = format(<span class="string">"Result is #&#123;0&#125;,#&#123;1&#125;"</span>, <span class="number">22</span>, <span class="number">33</span>);</span><br><span class="line">alert(a);<span class="comment">//"Result is 22,33"</span></span><br><span class="line"><span class="keyword">var</span> b = format(<span class="string">"#&#123;name&#125; is a #&#123;sex&#125;"</span>, &#123;</span><br><span class="line">  name: <span class="string">"Jhon"</span>,</span><br><span class="line">  sex: <span class="string">"man"</span></span><br><span class="line">&#125;);</span><br><span class="line">alert(b);<span class="comment">//"Jhon is a man"</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
       
 
       

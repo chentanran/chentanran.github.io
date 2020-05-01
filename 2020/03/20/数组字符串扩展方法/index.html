@@ -8,12 +8,14 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数组字符串扩展方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="format123456789101112131415161718192021function format(str, object) &amp;#123;  var array = Array.prototype.slice.call(arguments, 1);  return str.replace(&#x2F;\\?\#&amp;#123;([^&amp;#123;&amp;#125;]+)\&amp;#125;&#x2F;gm, functio">
+<meta property="og:type" content="article">
 <meta property="og:title" content="数组字符串扩展方法">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;20&#x2F;%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="format123456789101112131415161718192021function format(str, object) &amp;#123;  var array = Array.prototype.slice.call(arguments, 1);  return str.replace(&#x2F;\\?\#&amp;#123;([^&amp;#123;&amp;#125;]+)\&amp;#125;&#x2F;gm, functio">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-20T01:15:22.276Z">
+<meta property="og:updated_time" content="2020-03-20T01:21:27.646Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -170,7 +172,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ol>
+<li>format<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">format</span>(<span class="params">str, object</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> array = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> str.replace(<span class="regexp">/\\?\#&#123;([^&#123;&#125;]+)\&#125;/gm</span>, <span class="function"><span class="keyword">function</span>(<span class="params">match, name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (match.charAt(<span class="number">0</span>) == <span class="string">'\\'</span>)</span><br><span class="line">      <span class="keyword">return</span> match.slice(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> index = <span class="built_in">Number</span>(name)</span><br><span class="line">    <span class="keyword">if</span> (index &gt;= <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> array[index];</span><br><span class="line">    <span class="keyword">if</span> (object &amp;&amp; object[name] !== <span class="keyword">void</span> <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span>  object[name];</span><br><span class="line">    <span class="keyword">return</span>  <span class="string">''</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = format(<span class="string">"Result is #&#123;0&#125;,#&#123;1&#125;"</span>, <span class="number">22</span>, <span class="number">33</span>);</span><br><span class="line">alert(a);<span class="comment">//"Result is 22,33"</span></span><br><span class="line"><span class="keyword">var</span> b = format(<span class="string">"#&#123;name&#125; is a #&#123;sex&#125;"</span>, &#123;</span><br><span class="line">  name: <span class="string">"Jhon"</span>,</span><br><span class="line">  sex: <span class="string">"man"</span></span><br><span class="line">&#125;);</span><br><span class="line">alert(b);<span class="comment">//"Jhon is a man"</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
       
 
       
@@ -262,6 +267,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/05/01/linux%E5%AE%89%E8%A3%85nodejs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          linux安装nodejs
+        
+      </div>
+    </a>
   
   
     <a href="/2020/03/05/%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/" id="article-nav-older" class="article-nav-link-wrap">
