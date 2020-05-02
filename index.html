@@ -151,6 +151,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-在linux部署nuxt应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/02/%E5%9C%A8linux%E9%83%A8%E7%BD%B2nuxt%E5%BA%94%E7%94%A8/">在linux部署nuxt应用</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/02/%E5%9C%A8linux%E9%83%A8%E7%BD%B2nuxt%E5%BA%94%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-05-02T02:09:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>打包nuxt</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将打包文件放到linux服务器目录</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.nuxt -&gt; 文件在服务器会默认隐藏</span><br><span class="line">server -&gt; node服务文件</span><br><span class="line"><span class="keyword">static</span> -&gt; 静态文件</span><br><span class="line">package.json</span><br><span class="line">nuxt.config.js -&gt; nuxt配置文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>到指定目录下载npm包</p>
+</li>
+<li><p>启动服务</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pm2 线程守护</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm run pm2 -g -&gt; 全局安装 pm2</span><br><span class="line"></span><br><span class="line">ln -s /usr/src/nodejs/bin/pm2 /usr/local/bin/ -&gt; 建立软连接</span><br><span class="line"></span><br><span class="line">pm2 list -&gt; 查看进程</span><br><span class="line"></span><br><span class="line">pm2 start npm --name <span class="string">"my-nuxt"</span> -- run start -&gt; 启动, 引号内是线程名</span><br><span class="line"></span><br><span class="line">pm2 <span class="keyword">delete</span> my-nuxt 结束线程</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/02/%E5%9C%A8linux%E9%83%A8%E7%BD%B2nuxt%E5%BA%94%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-linux安装nodejs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
