@@ -8,14 +8,14 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>linux安装nodejs | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="官网复制nodejs的linux版本下载地址到linux上下载安装包12cd &#x2F;usr    &#x2F;&#x2F;进入usr目录wget https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;v14.1.0&#x2F;node-v14.1.0-linux-x64.tar.xz 解压压缩包1tar xvJf node-v14.1.0-linux-x64.tar.xz     &#x2F;&#x2F;解压node的包 重命名1">
+  <meta name="description" content="官网复制nodejs的linux版本下载地址到linux上下载安装包12cd &#x2F;usr    &#x2F;&#x2F;进入usr目录wget https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;v14.1.0&#x2F;node-v14.1.0-linux-x64.tar.xz 解压压缩包1tar xvJf node-v14.1.0-linux-x64.tar.xz     &#x2F;&#x2F;解压node的包 重命">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux安装nodejs">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;01&#x2F;linux%E5%AE%89%E8%A3%85nodejs&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="官网复制nodejs的linux版本下载地址到linux上下载安装包12cd &#x2F;usr    &#x2F;&#x2F;进入usr目录wget https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;v14.1.0&#x2F;node-v14.1.0-linux-x64.tar.xz 解压压缩包1tar xvJf node-v14.1.0-linux-x64.tar.xz     &#x2F;&#x2F;解压node的包 重命名1">
+<meta property="og:description" content="官网复制nodejs的linux版本下载地址到linux上下载安装包12cd &#x2F;usr    &#x2F;&#x2F;进入usr目录wget https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;v14.1.0&#x2F;node-v14.1.0-linux-x64.tar.xz 解压压缩包1tar xvJf node-v14.1.0-linux-x64.tar.xz     &#x2F;&#x2F;解压node的包 重命">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-02T02:24:56.921Z">
+<meta property="og:updated_time" content="2020-05-02T02:26:44.715Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -172,13 +172,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
+        <a id="more"></a>
+
+<ol>
 <li>官网复制nodejs的linux版本下载地址到linux上下载安装包<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr    <span class="comment">//进入usr目录</span></span><br><span class="line">wget https:<span class="comment">//npm.taobao.org/mirrors/node/v14.1.0/node-v14.1.0-linux-x64.tar.xz</span></span><br></pre></td></tr></table></figure></li>
 <li>解压压缩包<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvJf node-v14<span class="number">.1</span><span class="number">.0</span>-linux-x64.tar.xz     <span class="comment">//解压node的包</span></span><br></pre></td></tr></table></figure></li>
 <li>重命名<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v14<span class="number">.1</span><span class="number">.0</span>-linux-x64 nodejs</span><br></pre></td></tr></table></figure></li>
 <li>建立软连接，变为全局环境变量<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/nodejs/bin/npm /usr/local/bin/</span><br><span class="line">ln -s /usr/nodejs/bin/node /usr/local/bin/</span><br></pre></td></tr></table></figure></li>
 <li>测试安装是否成功<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<a id="more"></a></li>
+</li>
 </ol>
 
       
