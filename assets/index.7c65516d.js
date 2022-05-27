@@ -1,0 +1,1 @@
+import{u as r}from"./useAxios.5629f196.js";const e=r(),o=t=>e.post({url:"/user/login",data:t}),l=()=>e.get({url:"/user/loginOut"}),u=({params:t})=>e.get({url:"/role/list",params:t}),n=({params:t})=>e.get({url:"/role/list",params:t});export{n as a,l as b,u as g,o as l};
